@@ -1,0 +1,1026 @@
+/* Retro 90s Spotify CSS - Maximum Nostalgia Mode! */
+
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5);
+    background-size: 400% 400%;
+    animation: gradientShift 4s ease infinite;
+    color: #00ff00;
+    font-size: 10px;
+    overflow-x: auto;
+    /* Add subtle animation on load */
+    animation: gradientShift 4s ease infinite, pageLoadFade 1s ease-in;
+}
+
+@keyframes pageLoadFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(90deg, #ff0080, #0080ff, #80ff00, #ff8000);
+    color: #ffff00;
+    font-weight: bold;
+    padding: 10px;
+    border: 4px outset #c0c0c0;
+    text-shadow: 2px 2px 4px #000000;
+    animation: colorCycle 2s infinite, bannerSlide 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Classic 90s sliding banner animation */
+@keyframes bannerSlide {
+    0%, 100% { 
+        background-position: 0% 50%;
+        transform: translateX(0);
+    }
+    50% { 
+        background-position: 100% 50%;
+        transform: translateX(2px);
+    }
+}
+
+@keyframes colorCycle {
+    0% { color: #ffff00; text-shadow: 2px 2px 4px #000000, 0 0 8px #ffff00; }
+    25% { color: #ff00ff; text-shadow: 2px 2px 4px #000000, 0 0 8px #ff00ff; }
+    50% { color: #00ffff; text-shadow: 2px 2px 4px #000000, 0 0 8px #00ffff; }
+    75% { color: #ff8000; text-shadow: 2px 2px 4px #000000, 0 0 8px #ff8000; }
+    100% { color: #ffff00; text-shadow: 2px 2px 4px #000000, 0 0 8px #ffff00; }
+}
+
+marquee {
+    font-size: 12px;
+    animation: marqueeGlow 2s ease-in-out infinite;
+}
+
+/* Classic 90s marquee glow effect */
+@keyframes marqueeGlow {
+    0%, 100% { filter: brightness(1) contrast(1); }
+    50% { filter: brightness(1.2) contrast(1.1) saturate(1.2); }
+}
+
+/* Header */
+.header {
+    background: radial-gradient(circle, #ff00ff, #8000ff, #0080ff);
+    padding: 20px;
+    border: 6px inset #c0c0c0;
+    text-align: center;
+}
+
+.neon-title {
+    font-size: 32px;
+    color: #00ffff;
+    text-shadow: 
+        0 0 2px #00ffff,
+        0 0 4px #00ffff,
+        0 0 6px #00ffff,
+        2px 2px 0px #000000;
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+    margin: 0;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 
+            0 0 2px #00ffff,
+            0 0 4px #00ffff,
+            0 0 6px #00ffff,
+            2px 2px 0px #000000;
+    }
+    to {
+        text-shadow: 
+            0 0 1px #00ffff,
+            0 0 2px #00ffff,
+            0 0 4px #00ffff,
+            2px 2px 0px #000000;
+    }
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #ffff00;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 10px 0;
+}
+
+.spinning-gif {
+    width: 32px;
+    height: 32px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Navigation */
+.nav-bar {
+    background: linear-gradient(90deg, #c0c0c0, #808080, #c0c0c0);
+    padding: 15px;
+    border: 4px outset #c0c0c0;
+    text-align: center;
+}
+
+.nav-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    background: linear-gradient(45deg, #ff0080, #8000ff);
+    color: #ffffff;
+    border: 3px outset #c0c0c0;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px #000000;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add classic button press animation */
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-btn:hover::before {
+    left: 100%;
+}
+
+.nav-btn:hover {
+    background: linear-gradient(45deg, #ff00ff, #0080ff);
+    border: 3px inset #c0c0c0;
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.nav-btn:active {
+    transform: scale(0.95) translateY(1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Layout */
+table {
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar {
+    background: repeating-linear-gradient(
+        45deg,
+        #800080,
+        #800080 10px,
+        #400040 10px,
+        #400040 20px
+    );
+    border: 4px inset #c0c0c0;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.main-content {
+    background: 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><rect width="10" height="10" fill="%23ff00ff"/><rect x="10" y="10" width="10" height="10" fill="%23ff00ff"/></svg>'),
+        linear-gradient(135deg, #001122, #003366);
+    background-size: 20px 20px, 100% 100%;
+    border: 4px inset #c0c0c0;
+    padding: 20px;
+    vertical-align: top;
+}
+
+/* Widgets */
+.widget {
+    background: linear-gradient(135deg, #404040, #808080);
+    border: 3px outset #c0c0c0;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.widget h3 {
+    color: #ffff00;
+    font-size: 10px;
+    margin: 0 0 10px 0;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+/* Player */
+.player {
+    background: linear-gradient(135deg, #333333, #666666);
+    border: 2px inset #c0c0c0;
+    padding: 8px;
+}
+
+.display {
+    background: #000000;
+    color: #00ff00;
+    padding: 5px;
+    border: 1px inset #333333;
+    margin-bottom: 8px;
+    font-size: 8px;
+    text-align: center;
+    min-height: 20px;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.controls button {
+    background: linear-gradient(135deg, #c0c0c0, #808080);
+    border: 2px outset #c0c0c0;
+    font-size: 12px;
+    padding: 5px 8px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.controls button:active {
+    border: 2px inset #c0c0c0;
+}
+
+.volume {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 8px;
+    color: #ffffff;
+}
+
+.vu-meter {
+    display: flex;
+    gap: 2px;
+}
+
+.vu-bar {
+    width: 4px;
+    height: 12px;
+    background: #404040;
+    border: 1px solid #666666;
+    transition: background 0.3s;
+}
+
+.vu-bar.active {
+    background: linear-gradient(to top, #00ff00, #ffff00, #ff0000);
+}
+
+/* Sections */
+.section {
+    display: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.section.active {
+    display: block;
+}
+
+.section-title {
+    font-size: 16px;
+    color: #ffff00;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.under-construction {
+    background: repeating-linear-gradient(
+        45deg,
+        #ffff00,
+        #ffff00 10px,
+        #ff0000 10px,
+        #ff0000 20px
+    );
+    color: #000000;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border: 3px solid #000000;
+    margin-bottom: 20px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.7; }
+}
+
+/* Album Grid */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.album {
+    background: linear-gradient(135deg, #ff00ff, #8000ff);
+    border: 3px outset #c0c0c0;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+
+/* Classic 90s floating animation */
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-3px) rotate(0.5deg); }
+    50% { transform: translateY(-6px) rotate(0deg); }
+    75% { transform: translateY(-3px) rotate(-0.5deg); }
+}
+
+.album:hover {
+    transform: scale(1.08) translateY(-5px);
+    border: 3px inset #c0c0c0;
+    box-shadow: 0 0 15px #ff00ff, 0 8px 16px rgba(255, 0, 255, 0.3);
+    animation: hoverBounce 0.6s ease;
+}
+
+/* Bouncy hover effect */
+@keyframes hoverBounce {
+    0%, 100% { transform: scale(1.08) translateY(-5px); }
+    50% { transform: scale(1.12) translateY(-8px); }
+}
+
+.album-cover {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #ff0080, #0080ff);
+    border: 2px solid #ffffff;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    animation: albumSpin 10s linear infinite, discGlow 3s ease-in-out infinite;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add classic CD reflection effect */
+.album-cover::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 30%;
+    height: 30%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.6), transparent);
+    border-radius: 50%;
+    animation: reflectionShine 8s linear infinite;
+}
+
+@keyframes reflectionShine {
+    0%, 100% { opacity: 0.3; transform: rotate(0deg); }
+    50% { opacity: 0.8; transform: rotate(180deg); }
+}
+
+@keyframes albumSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Classic disco ball glow effect */
+@keyframes discGlow {
+    0%, 100% { box-shadow: 0 0 10px #ff0080; }
+    33% { box-shadow: 0 0 15px #0080ff; }
+    66% { box-shadow: 0 0 20px #80ff00; }
+}
+
+.album-title {
+    font-size: 8px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+    margin-bottom: 5px;
+}
+
+.album-artist {
+    font-size: 6px;
+    color: #ffff00;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.album:hover::after {
+    content: "Now Spinning!";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000000;
+    color: #00ff00;
+    padding: 3px 6px;
+    border: 1px solid #00ff00;
+    font-size: 6px;
+    z-index: 10;
+}
+
+/* Inputs */
+.retro-input, .retro-textarea {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    background: #000000;
+    color: #00ff00;
+    border: 2px inset #c0c0c0;
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.retro-textarea {
+    height: 60px;
+    resize: none;
+}
+
+.small-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    background: linear-gradient(135deg, #ff8000, #ff4000);
+    color: #ffffff;
+    border: 2px outset #c0c0c0;
+    padding: 5px 8px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.small-btn:active {
+    border: 2px inset #c0c0c0;
+}
+
+/* Guestbook */
+.guestbook-form table {
+    background: linear-gradient(135deg, #404040, #606060);
+    border: 2px outset #c0c0c0;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.guestbook-form td {
+    padding: 5px;
+    color: #ffffff;
+    font-size: 8px;
+}
+
+.guestbook-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    background: linear-gradient(135deg, #00ff00, #008000);
+    color: #000000;
+    border: 3px outset #c0c0c0;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.guestbook-btn:active {
+    border: 3px inset #c0c0c0;
+}
+
+.guestbook-entries {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 2px inset #c0c0c0;
+    background: #000000;
+    padding: 10px;
+}
+
+.guest-entry {
+    background: linear-gradient(135deg, #001122, #003366);
+    border: 1px solid #0066cc;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 8px;
+}
+
+.guest-entry.alt {
+    background: linear-gradient(135deg, #220011, #660033);
+    border-color: #cc0066;
+}
+
+.entry-date {
+    color: #808080;
+    font-size: 6px;
+    margin-top: 5px;
+}
+
+/* AI Widget */
+.ai-widget {
+    background: linear-gradient(135deg, #004400, #008800);
+    border: 3px outset #c0c0c0;
+    padding: 15px;
+    text-align: center;
+}
+
+.ai-widget p {
+    color: #ffffff;
+    font-size: 8px;
+    margin-bottom: 15px;
+}
+
+.ai-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    background: linear-gradient(135deg, #ff00ff, #8000ff);
+    color: #ffffff;
+    border: 3px outset #c0c0c0;
+    padding: 12px 20px;
+    cursor: pointer;
+    animation: aiGlow 2s infinite;
+}
+
+@keyframes aiGlow {
+    0%, 100% { box-shadow: 0 0 5px #ff00ff; }
+    50% { box-shadow: 0 0 20px #ff00ff, 0 0 30px #8000ff; }
+}
+
+.ai-btn:active {
+    border: 3px inset #c0c0c0;
+}
+
+.ai-result {
+    margin-top: 15px;
+    padding: 10px;
+    background: #000000;
+    border: 2px inset #c0c0c0;
+    color: #00ff00;
+    font-size: 8px;
+    min-height: 20px;
+}
+
+/* Visitor Counter */
+.counter {
+    background: #000000;
+    color: #ff0000;
+    border: 2px inset #c0c0c0;
+    padding: 10px;
+    text-align: center;
+    font-size: 8px;
+}
+
+#visitor-count {
+    font-size: 16px;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    animation: counterBlink 1s infinite;
+}
+
+@keyframes counterBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.7; }
+}
+
+/* Ads */
+.ad-banner .ad {
+    background: linear-gradient(135deg, #ffff00, #ff8000);
+    border: 2px solid #ff0000;
+    padding: 8px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-size: 6px;
+    text-align: center;
+    animation: adBlink 2s infinite;
+}
+
+@keyframes adBlink {
+    0%, 80% { opacity: 1; }
+    81%, 100% { opacity: 0.8; }
+}
+
+.ad button {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    background: #ff0000;
+    color: #ffffff;
+    border: 1px outset #c0c0c0;
+    padding: 3px 6px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/* Spinning CD */
+.spinning-cd {
+    text-align: center;
+    padding: 20px;
+}
+
+.cd {
+    font-size: 48px;
+    animation: cdSpin 3s linear infinite;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+@keyframes cdSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Badges */
+.badges {
+    text-align: center;
+}
+
+.badge {
+    width: 60px;
+    height: 20px;
+    margin: 2px;
+    border: 1px solid #c0c0c0;
+    background: linear-gradient(135deg, #0080ff, #004080);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(90deg, #404040, #808080, #404040);
+    border: 4px outset #c0c0c0;
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 6px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #c0c0c0, #808080);
+    margin: 15% auto;
+    padding: 0;
+    border: 4px outset #c0c0c0;
+    width: 400px;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.modal-header {
+    background: linear-gradient(90deg, #000080, #0000ff);
+    color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 10px;
+}
+
+.close {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+.modal-text {
+    padding: 20px;
+    color: #000000;
+    font-size: 8px;
+    text-align: center;
+}
+
+.modal-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    background: linear-gradient(135deg, #c0c0c0, #808080);
+    border: 2px outset #c0c0c0;
+    padding: 8px 15px;
+    margin: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 20px;
+}
+
+.modal-btn:active {
+    border: 2px inset #c0c0c0;
+}
+
+/* Mixtape */
+.mixtape-display {
+    background: #000000;
+    border: 2px inset #c0c0c0;
+    padding: 10px;
+    min-height: 100px;
+    color: #00ff00;
+    font-size: 8px;
+}
+
+.mixtape-track {
+    background: linear-gradient(135deg, #003300, #006600);
+    border: 1px solid #00ff00;
+    padding: 8px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.empty-mixtape {
+    text-align: center;
+    color: #808080;
+    padding: 20px;
+}
+
+/* Blink effect for older browsers compatibility */
+blink {
+    animation: blink 1s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .main-content {
+        width: 100%;
+    }
+    
+    .nav-btn {
+        font-size: 8px;
+        padding: 8px 10px;
+        margin: 2px;
+    }
+    
+    .neon-title {
+        font-size: 20px;
+    }
+    
+    .album-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+}
+
+/* Scroll bar styling for that authentic 90s look */
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #c0c0c0;
+    border: 2px inset #c0c0c0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #808080, #404040);
+    border: 2px outset #c0c0c0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #606060, #202020);
+}
+
+/* Loading animation */
+@keyframes loading {
+    0% { content: "♪"; }
+    25% { content: "♫"; }
+    50% { content: "♪"; }
+    75% { content: "♬"; }
+    100% { content: "♪"; }
+}
+
+/* Classic 90s Falling Stars Animation */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffff00;
+    border-radius: 50%;
+    animation: fallingStar 3s linear infinite;
+    box-shadow: 0 0 6px #ffff00;
+}
+
+.star:nth-child(2) { left: 20%; animation-delay: 0.5s; background: #ff00ff; box-shadow: 0 0 6px #ff00ff; }
+.star:nth-child(3) { left: 40%; animation-delay: 1s; background: #00ffff; box-shadow: 0 0 6px #00ffff; }
+.star:nth-child(4) { left: 60%; animation-delay: 1.5s; background: #ff8000; box-shadow: 0 0 6px #ff8000; }
+.star:nth-child(5) { left: 80%; animation-delay: 2s; background: #80ff00; box-shadow: 0 0 6px #80ff00; }
+
+@keyframes fallingStar {
+    0% { 
+        top: -10px; 
+        opacity: 0; 
+        transform: scale(0) rotate(0deg); 
+    }
+    10% { 
+        opacity: 1; 
+        transform: scale(1) rotate(0deg); 
+    }
+    90% { 
+        opacity: 1; 
+        transform: scale(1) rotate(360deg); 
+    }
+    100% { 
+        top: 100vh; 
+        opacity: 0; 
+        transform: scale(0) rotate(720deg); 
+    }
+}
+
+/* Pulsating elements for extra 90s feel */
+.pulse {
+    animation: pulse90s 2s ease-in-out infinite;
+}
+
+@keyframes pulse90s {
+    0%, 100% { 
+        transform: scale(1); 
+        filter: brightness(1); 
+    }
+    50% { 
+        transform: scale(1.05); 
+        filter: brightness(1.2) saturate(1.3); 
+    }
+}
+
+/* Classic 90s "Under Construction" style animation */
+.construction-blink {
+    animation: constructionBlink 1s step-start infinite;
+}
+
+@keyframes constructionBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Rainbow text effect for ultimate 90s vibes */
+.rainbow-text {
+    background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff80, #00ffff, #8000ff, #ff00ff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowFlow 3s ease infinite;
+}
+
+@keyframes rainbowFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Enhanced smooth animations for better user experience */
+.section {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth hover effects for all interactive elements */
+a, button, .album, .nav-btn, .control-btn {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity, box-shadow;
+}
+
+/* Optimize animations for better performance */
+.album-cover, .spinning-gif, .star {
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+/* Smooth scaling for buttons */
+button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 0.1s;
+}
+
+/* Smooth transitions for modals */
+#modal {
+    transition: all 0.3s ease;
+}
+
+/* Smooth text changes */
+.display, #track-info {
+    transition: all 0.3s ease;
+}
+
+/* Add smooth scrolling to the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .stars {
+        display: none;
+    }
+}
+
+/* Classic 90s loading screen */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #000000, #330066, #660033, #000000);
+    background-size: 400% 400%;
+    animation: gradientShift 2s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: #00ff00;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.loading-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+    animation: pulse90s 1s ease infinite;
+}
+
+.loading-bar {
+    width: 300px;
+    height: 20px;
+    border: 2px solid #00ff00;
+    background: #000000;
+    overflow: hidden;
+    position: relative;
+}
+
+.loading-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #00ff00, #ffff00, #ff00ff);
+    width: 0%;
+    animation: loadingProgress 3s ease-in-out forwards;
+}
+
+@keyframes loadingProgress {
+    0% { width: 0%; }
+    20% { width: 15%; }
+    40% { width: 30%; }
+    60% { width: 60%; }
+    80% { width: 85%; }
+    100% { width: 100%; }
+}
+
+/* Hide loading after animation completes */
+.loading-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}

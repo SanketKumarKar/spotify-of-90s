@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>🎵 SPOTIFY DIGITAL JUKEBOX 🎵 - The Ultimate 90s Music Experience!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA">
+</head>
+<body>
+    <!-- Classic 90s Loading Screen -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-text">LOADING SPOTIFY '97...</div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+        <div style="margin-top: 15px; font-size: 8px; animation: construction-blink 1s infinite;">
+            ⚡ INITIALIZING DIGITAL REVOLUTION ⚡
+        </div>
+    </div>
+
+    <!-- Falling Stars Animation for 90s Vibes -->
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <!-- Blinking Banner -->
+    <div class="banner">
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            🎵 SPOTIFY DIGITAL JUKEBOX: JAM OUT LIKE IT'S 1997! 🎵 ♪ <span class="construction-blink">⚡ UNDER CONSTRUCTION ⚡</span> Now Playing: The Freshest Beats on the World Wide Web! ♪
+        </marquee>
+    </div>
+
+    <!-- Main Container -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td colspan="3" class="header">
+                <center>
+                    <h1 class="neon-title rainbow-text pulse">SPOTIFY '97</h1>
+                    <h2 class="subtitle">DIGITAL MUSIC REVOLUTION</h2>
+                    <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnlOTiPPYxO+zYhBMhZLF1Vhw2vfKz1Rn7F5KGwCQCCFKrxOPvBvPokTNKJhAAIfkECQoAAAAsAAAAABAAEAAAAzMIumInK0rllntz9WTWF3ZY3r+N6AIh+HS/Y7xKOVXGJNaAhL3BgFQhKnJNOhbpPbKMsAAkIfkECQoAAAAsAAAAABAAEAAAAzEIunIhK8oNlNRoHIhngCVJCMhL5xk2d6o9zJaCtJnXLNsArQoTOTdkVmWJdPOmKKK6BAA7" alt="Loading..." class="spinning-gif pulse">
+                </center>
+            </td>
+        </tr>
+        
+        <!-- Navigation -->
+        <tr>
+            <td colspan="3" class="nav-bar">
+                <center>
+                    <button class="nav-btn" onclick="showSection('library')">🎵 MUSIC LIBRARY</button>
+                    <button class="nav-btn" onclick="showSection('mixtape')">📼 MY MIXTAPE</button>
+                    <button class="nav-btn" onclick="showSection('guestbook')">📝 GUESTBOOK</button>
+                    <button class="nav-btn" onclick="showSection('recommender')">🤖 90s VIBE AI</button>
+                </center>
+            </td>
+        </tr>
+
+        <!-- Main Content Area -->
+        <tr>
+            <!-- Left Sidebar -->
+            <td width="200" valign="top" class="sidebar">
+                <div class="widget">
+                    <h3>🎧 WINAMP PLAYER</h3>
+                    <div id="player" class="player">
+                        <div class="display">
+                            <div id="track-info">♪ Ready to Rock! ♪</div>
+                        </div>
+                        <div class="controls">
+                            <button onclick="playPause()" id="play-btn">▶️</button>
+                            <button onclick="stop()">⏹️</button>
+                            <button onclick="nextTrack()">⏭️</button>
+                        </div>
+                        <div class="volume">
+                            <span>VOL:</span>
+                            <div class="vu-meter">
+                                <div class="vu-bar" id="vu1"></div>
+                                <div class="vu-bar" id="vu2"></div>
+                                <div class="vu-bar" id="vu3"></div>
+                                <div class="vu-bar" id="vu4"></div>
+                                <div class="vu-bar" id="vu5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3>🎼 MY MIXTAPE</h3>
+                    <div id="mixtape-tracks">
+                        <div class="mixtape-empty">Drag albums here!</div>
+                    </div>
+                    <input type="text" id="mixtape-name" placeholder="Name your mixtape..." class="retro-input">
+                    <button onclick="generateMixtapeName()" class="small-btn">Random Name!</button>
+                </div>
+
+                <div class="widget">
+                    <h3>🏆 WEB BADGES</h3>
+                    <div class="badges">
+                        <img src="data:image/gif;base64,R0lGODlhPAA8AIABAAAAAP///yH5BAEKAAEALAAAAAAPADwAAAI8jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1iiAAOw==" alt="Best viewed in Netscape" class="badge">
+                        <img src="data:image/gif;base64,R0lGODlhPAA8AIABAAAAAP///yH5BAEKAAEALAAAAAAPADwAAAI8jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1iiAAOw==" alt="Made with Notepad" class="badge">
+                        <img src="data:image/gif;base64,R0lGODlhPAA8AIABAAAAAP///yH5BAEKAAEALAAAAAAPADwAAAI8jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1iiAAOw==" alt="JavaScript Powered" class="badge">
+                    </div>
+                </div>
+            </td>
+
+            <!-- Main Content -->
+            <td valign="top" class="main-content">
+                <!-- Music Library Section -->
+                <div id="library" class="section active">
+                    <h2 class="section-title">🎵 ALBUM WALL OF FAME 🎵</h2>
+                    <div class="under-construction">
+                        <img src="data:image/gif;base64,R0lGODlhPAA8AIABAAAAAP///yH5BAEKAAEALAAAAAAPADwAAAI8jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1iiAAOw==" alt="Under Construction">
+                        UNDER CONSTRUCTION - NEW ALBUMS ADDED DAILY!
+                    </div>
+                    
+                    <div class="album-grid" id="album-grid">
+                        <!-- Albums will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Mixtape Section -->
+                <div id="mixtape" class="section">
+                    <h2 class="section-title">📼 CREATE YOUR MIXTAPE 📼</h2>
+                    <div class="mixtape-creator">
+                        <h3>Your Awesome Mixtape Collection:</h3>
+                        <div id="mixtape-collection" class="mixtape-display">
+                            <div class="empty-mixtape">No tracks yet! Add some albums to get started!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guestbook Section -->
+                <div id="guestbook" class="section">
+                    <h2 class="section-title">📝 SIGN THE GUESTBOOK! 📝</h2>
+                    <div class="guestbook-form">
+                        <table>
+                            <tr>
+                                <td>Name:</td>
+                                <td><input type="text" id="guest-name" class="retro-input"></td>
+                            </tr>
+                            <tr>
+                                <td>Message:</td>
+                                <td><textarea id="guest-message" class="retro-textarea"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <button onclick="addGuestbookEntry()" class="guestbook-btn">Sign Guestbook!</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="guestbook-entries" class="guestbook-entries">
+                        <!-- Sample entries -->
+                        <div class="guest-entry">
+                            <strong>CoolDude97:</strong> This site is totally rad! Love the retro vibes! 🎵
+                            <div class="entry-date">January 15, 1997</div>
+                        </div>
+                        <div class="guest-entry alt">
+                            <strong>MusicFan123:</strong> Finally, a digital jukebox that doesn't crash my browser!
+                            <div class="entry-date">February 3, 1997</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Recommender Section -->
+                <div id="recommender" class="section">
+                    <h2 class="section-title">🤖 90s VIBE RECOMMENDER AI 🤖</h2>
+                    <div class="ai-widget">
+                        <p>Our advanced AI technology analyzes your music taste!</p>
+                        <button onclick="getRecommendation()" class="ai-btn">Get My 90s Recommendation!</button>
+                        <div id="ai-result" class="ai-result"></div>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Right Sidebar -->
+            <td width="200" valign="top" class="sidebar">
+                <div class="widget">
+                    <h3>📊 VISITOR COUNTER</h3>
+                    <div class="counter">
+                        You are visitor #<br>
+                        <span id="visitor-count">001337</span>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3>📺 RETRO ADS</h3>
+                    <div class="ad-banner">
+                        <div class="ad">
+                            <strong>🖥️ UPGRADE TO WINDOWS 98!</strong><br>
+                            Experience the future of computing!<br>
+                            <button onclick="showModal('Sorry! This offer expired in 1998!')">Download Now!</button>
+                        </div>
+                        <div class="ad">
+                            <strong>💿 FREE 50-HOUR AOL TRIAL!</strong><br>
+                            Connect to the Information Superhighway!<br>
+                            <button onclick="showModal('Please insert your floppy disk!')">Get CD-ROM!</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3>💿 SPINNING CD</h3>
+                    <div class="spinning-cd">
+                        <div class="cd">💿</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+            <td colspan="3" class="footer">
+                <center>
+                    <p>© 1997 Spotify Digital Jukebox - Best Viewed in Netscape Navigator 3.0</p>
+                    <p>Made with ❤️ from Sanket & Diya.</p>
+                    <p><blink>🎵 Keep on rockin' in the digital world! 🎵</blink></p>
+                </center>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Modal for popups -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>⚠️ System Message ⚠️</h3>
+            </div>
+            <div id="modal-text" class="modal-text"></div>
+            <button onclick="closeModal()" class="modal-btn">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
